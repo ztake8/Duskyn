@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Dark "Dusk" Theme Base */
+    --background: 240 10% 3.9%;
+    /* Very dark #09090b */
+    --foreground: 0 0% 98%;
+
+    /* Glass Cards - Translucent White */
+    --card: 0 0% 100%;
+    /* White base, opacity handled in utils or alpha */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    /* Apple Liquid Background Gradient */
+    background: radial-gradient(circle at top left, #1a1a2e, #000000, #16213e);
+    min-height: 100vh;
+  }
+}
+
+/* Glassmorphism Utilities */
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-black/40 backdrop-blur-2xl border border-white/10;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+.moody-image {
+  @apply filter grayscale-[20%] contrast-[1.1] brightness-[0.8] sepia-[10%] hue-rotate-[180deg];
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
